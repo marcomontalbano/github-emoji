@@ -1,5 +1,5 @@
 .Spinner {
-  margin-top: 40px;
+  margin-top: 15px;
 }
 
 .Spinner img {
@@ -10,6 +10,10 @@
   color: #f1ab57;
   letter-spacing: 5px;
   text-transform: uppercase;
+}
+
+.Spinner .text-with-padding-top {
+  padding-top: 10px;
 }
 
 @keyframes jump {

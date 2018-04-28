@@ -12,4 +12,10 @@ export default {
             value: emoji,
         });
     },
+    search(name) {
+        AppDispatcher.dispatch({
+            type: ActionTypes.SEARCH,
+            value: name,
+        });
+    },
 };

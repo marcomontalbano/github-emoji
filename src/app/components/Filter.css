@@ -1,0 +1,33 @@
+.Filter {
+  background-color: #f6a324;
+  padding: 20px 0;
+}
+
+.Filter input {
+  appearance: none;
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #b76f00;
+  padding: 10px;
+  background: transparent;
+  color: #757575;
+  transition: background-color .5s, border-radius .5s;
+  font-size: 12px;
+  letter-spacing: 1px;
+  box-sizing: border-box;
+  text-align: center;
+  border-radius: 0px;
+}
+
+.Filter.fixed {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+.Filter input:focus, .Filter input.is-searching {
+  outline: none;
+  background-color: #ffffff2e;
+  border-radius: 5px;
+}

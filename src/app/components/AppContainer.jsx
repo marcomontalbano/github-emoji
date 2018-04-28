@@ -4,6 +4,7 @@ import { Container } from 'flux/utils';
 import EmojiActions from '../actions/EmojiActions';
 import EmojiStore from '../stores/EmojiStore';
 
+import Filter from './Filter';
 import Results from './Results';
 
 import './AppContainer.css';
@@ -27,6 +28,7 @@ class AppContainer extends Component {
     render() {
         return (
             <div className="App">
+                <Filter {...this.state} />
                 <Results {...this.state} />
             </div>
         );
