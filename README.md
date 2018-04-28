@@ -2,8 +2,6 @@ GitHub Emoji
 ============
 
 [![Build Status](https://travis-ci.org/marcomontalbano/github-emoji.svg?branch=master)](https://travis-ci.org/marcomontalbano/github-emoji)
-[![Beerpay](https://beerpay.io/marcomontalbano/github-emoji/badge.svg?style=beer)](https://beerpay.io/marcomontalbano/github-emoji)
-[![Beerpay](https://img.shields.io/badge/make-wish-f95c5c.svg)](https://beerpay.io/marcomontalbano/github-emoji)
 [![PayPal.me](https://img.shields.io/badge/paypal-donate-119fde.svg)](https://www.paypal.me/marcomontalbano)
 
 Finally a complete list of GitHub Emojis.
