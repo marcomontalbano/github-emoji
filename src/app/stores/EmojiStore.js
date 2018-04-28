@@ -27,7 +27,7 @@ class EmojiStore extends ReduceStore {
                 return {
                     hasResults: this.results.length > 0,
                     results: this.results.filter((emoji) => {
-                        return emoji.name.indexOf(action.value) >= 0;
+                        return emoji.name.toLowerCase().indexOf(action.value.toLowerCase()) >= 0;
                     }),
                 };
             default:
