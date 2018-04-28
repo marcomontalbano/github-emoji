@@ -7,7 +7,7 @@ class Spinner extends Component {
     render() {
         return (
             <div className="Spinner jump">
-                <img src="/images/smile.png" alt="loading" />
+                <img src="images/smile.png" alt="loading" />
                 <div className="text">loading</div>
             </div>
         );

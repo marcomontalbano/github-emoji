@@ -47,7 +47,7 @@ class Emoji extends Component {
     render() {
         return (
             <div className={`Emoji ${ this.state.isCopied ? 'copied' : '' }`} onClick={this.handleClick}>
-                <div className="image"><img src={`/emoji/${this.props.item.name}.png`} alt={this.props.item.name} /></div>
+                <div className="image"><img src={`emoji/${this.props.item.name}.png`} alt={this.props.item.name} /></div>
                 <div className="name">{this.props.item.code}</div>
             </div>
         );
