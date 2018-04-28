@@ -1,0 +1,20 @@
+{
+  "short_name": "GitHub Emoji",
+  "name": "GitHub Emoji",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "type": "image/png",
+      "sizes": "512x512"
+    },
+    {
+      "src": "apple-touch-icon.png",
+      "type": "image/png",
+      "sizes": "180x180"
+    }
+  ],
+  "start_url": "./index.html",
+  "display": "standalone",
+  "theme_color": "#eb8f00",
+  "background_color": "#eb8f00"
+}

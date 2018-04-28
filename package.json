@@ -1,0 +1,44 @@
+{
+  "name": "github-emoji",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Finally a complete list of GitHub Emojis.",
+  "homepage": "https://marcomontalbano.github.io/github-emoji/",
+  "author": {
+    "name": "Marco Montalbano",
+    "email": "me@marcomontalbano.com",
+    "url": "https://marcomontalbano.com"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/marcomontalbano/github-emoji"
+  },
+  "keywords": [
+    "mmontalbano",
+    "marcomontalbano",
+    "emoji",
+    "github emoji",
+    "emoticon",
+    "smile"
+  ],
+  "engines": {
+    "node": "6.x || 7.x || 8.x"
+  },
+  "devDependencies": {
+    "flux": "^3.1.3",
+    "gh-pages": "^1.1.0",
+    "npm-run-all": "^4.1.2",
+    "prop-types": "^15.6.1",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
+    "react-scripts": "^1.1.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "gh-pages": "node ./scripts/gh-pages.js",
+    "deploy": "npm-run-all build gh-pages"
+  }
+}

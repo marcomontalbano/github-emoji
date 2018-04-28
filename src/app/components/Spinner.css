@@ -1,0 +1,23 @@
+.Spinner {
+  margin-top: 40px;
+}
+
+.Spinner img {
+  width: 48px;
+}
+
+.Spinner .text {
+  color: #f1ab57;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+}
+
+@keyframes jump {
+  0%   {transform: translate3d(0,0,0) scale3d(1,1,1);}
+  40%  {transform: translate3d(0,30%,0) scale3d(.7,1.5,1);}
+  100% {transform: translate3d(0,100%,0) scale3d(1.5,.7,1);}
+}
+.jump {
+  transform-origin: 50% 50%;
+  animation: jump .6s linear alternate infinite;
+}

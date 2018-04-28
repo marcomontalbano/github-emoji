@@ -1,0 +1,205 @@
+/* ========================================================================
+   Component: Container
+ ========================================================================== */
+/*
+ * 1. Box sizing has to be `content-box` so the max-width is always the same and
+ *    unaffected by the padding on different breakpoints. It's important for the size modifiers.
+ */
+.container {
+  box-sizing: content-box;
+  /* 1 */
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+/* Phone landscape and bigger */
+@media (min-width: 640px) {
+  .container {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+/* Tablet landscape and bigger */
+@media (min-width: 960px) {
+  .container {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+/*
+ * Micro clearfix
+ */
+.container::before,
+.container::after {
+  content: "";
+  display: table;
+}
+.container::after {
+  clear: both;
+}
+/*
+ * Remove margin from the last-child
+ */
+.container > :last-child {
+  margin-bottom: 0;
+}
+/*
+ * Remove padding from nested containers
+ */
+.container .container {
+  padding-left: 0;
+  padding-right: 0;
+}
+/* Size modifier
+ ========================================================================== */
+.container-small {
+  max-width: 900px;
+}
+.container-large {
+  max-width: 1600px;
+}
+.container-expand {
+  max-width: none;
+}
+
+
+/*** GLOBAL ***/
+
+html {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 1.5;
+  -webkit-text-size-adjust: 100%;
+  background: #fff;
+  color: #666;
+}
+body {
+  margin: 0;
+  font-weight: 300;
+  font-size: 16px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0 0 20px 0;
+}
+
+audio, canvas, iframe, img, svg, video {
+  vertical-align: middle;
+}
+
+.text-center {
+  text-align: center;
+}
+
+a {
+  transition: color .3s, border .3s;
+  border-bottom: 1px solid transparent;
+}
+a:hover {
+  text-decoration: none;
+  border-bottom: 1px solid;
+}
+
+.github-buttons {
+  margin: 25px 0 0 0;
+}
+
+.github-link {
+  position: absolute;
+  transform: rotate(45deg);
+  font-size: 0;
+  z-index: 1;
+  padding: 0;
+  margin: 0;
+  height: 70px;
+  top: -10px;
+  right: -45px;
+}
+.github-link i,
+.github-link img {
+  position: absolute;
+  font-size: 40px;
+  width: 36px;
+  left: 70px;
+  top: 35px;
+  color: #f9b92a;
+  transform: translate(-50%, -50%);
+}
+.github-link::before {
+  content: "";
+  width: 0; 
+  height: 0; 
+  border-left: 70px solid transparent;
+  border-right: 70px solid transparent;
+  border-bottom: 70px solid white;
+}
+#version {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  font-size: 10px;
+  color: #f9b92a;
+  text-align: center;
+}
+
+
+
+/*** HEADER ***/
+
+header {
+  cursor: default;
+  background: linear-gradient(180deg,#fbcb2e,#f6a324);
+  min-height: 230px;
+  padding: 20px 0 20px;
+  color: white;
+  overflow: hidden;
+  position: relative;
+}
+header a {
+  color: #ffffff;
+  text-decoration: none;
+  cursor: pointer;
+  padding-bottom: 1px;
+  font-weight: 600;
+  border-bottom: 1px solid transparent;
+}
+header a:hover {
+  color: #FFECB3;
+  text-decoration: none;
+  border-bottom: 1px solid;
+  border-color: #FFECB3;
+}
+
+header h1 {
+  font-size: 50px;
+  line-height: 60px;
+  font-weight: 300;
+  letter-spacing: 5px;
+  color: white;
+}
+header h3 {
+  margin-top: 25px;
+  font-size: 22px;
+  line-height: unset;
+  font-weight: 300;
+  letter-spacing: 4px;
+  color: white;
+}
+@media (max-width: 450px) {
+  header h1 {
+    padding: 50px 0 0;
+  }
+}
+@media (max-width: 320px) {
+  header h1 {
+    padding: 10px 0 0;
+  }
+}
+
+h3 img {
+  width: 24px;
+  vertical-align: initial;
+}
