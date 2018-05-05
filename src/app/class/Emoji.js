@@ -9,4 +9,8 @@ export default class Emoji {
         this.unicode = unicode;
     }
 
+    get relativeImage() {
+        return `emoji/${this.name}.png`;
+    }
+
 }

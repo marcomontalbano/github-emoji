@@ -12,7 +12,7 @@ class Emoji extends Component {
             isCopied: false
         };
 
-        this.handleClick = this.handleClick.bind(this);
+        this.handleClickToCopy = this.handleClickToCopy.bind(this);
     }
 
     static get propTypes() {
@@ -21,17 +21,20 @@ class Emoji extends Component {
         };
     }
 
-    copyToClipboard(text) {
+    copyToClipboard(target) {
         var textarea = document.createElement('textarea');
-        textarea.innerText = text;
+        textarea.innerText = target.textContent;
 
         document.getElementsByTagName('body')[0].append(textarea);
         textarea.select();
 
         try {
-            this.setState({isCopied: document.execCommand('copy')});
+            if (document.execCommand('copy')) {
+                target.classList.add('copied');
+            }
+
             setTimeout(() => {
-                this.setState({isCopied: false}); 
+                target.classList.remove('copied');
             }, 2000);
         } catch (err) {
             console.error('Oops, unable to copy');
@@ -40,15 +43,23 @@ class Emoji extends Component {
         textarea.remove();
     }
 
-    handleClick() {
-        this.copyToClipboard(this.props.item.code);
+    handleClickToCopy(e) {
+        this.copyToClipboard(e.target);
     }
 
     render() {
         return (
-            <div className={`Emoji ${ this.state.isCopied ? 'copied' : '' }`} onClick={this.handleClick}>
-                <div className="image"><img src={`emoji/${this.props.item.name}.png`} alt={this.props.item.name} /></div>
+            <div className={`Emoji ${ this.state.isCopied ? 'copied' : '' }`}>
+                <div className="image"><img src={this.props.item.relativeImage} alt={this.props.item.name} /></div>
                 <div className="name">{this.props.item.code}</div>
+                <div className="details">
+                    <div className="image"><img src={this.props.item.relativeImage} alt={this.props.item.name} /></div>
+                    <div className="name" onClick={this.handleClickToCopy}>{this.props.item.code}</div>
+                    <div className="name char">
+                        <div onClick={this.handleClickToCopy} className="column column-left" dangerouslySetInnerHTML={{ __html: this.props.item.html_entity }}></div>
+                        <div onClick={this.handleClickToCopy} className="column column-right">{this.props.item.html_entity}</div>
+                    </div>
+                </div>
             </div>
         );
     }
