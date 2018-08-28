@@ -8,7 +8,7 @@ class NotFound extends Component {
         return (
             <div className="Spinner">
                 <img src="images/dizzy_face.png" alt="no results" />
-                <div className="text text-with-padding-top">no results</div>
+                <div className="text">no results</div>
             </div>
         );
     }

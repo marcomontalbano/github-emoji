@@ -6,13 +6,10 @@ class Api {
     load() {
         fetch('./emoji.json')
             .then(function(response) {
-                return response.text();
+                return response.json();
             })
-            .then(function(text) {
-                let emoji = JSON.parse(text).map((entry) => {
-                    return new Emoji(entry);
-                });
-                EmojiActions.loadedEmoji(emoji);
+            .then(function(json) {
+                EmojiActions.loadedEmoji(Emoji.fromJson(json));
             })
         ;
     }

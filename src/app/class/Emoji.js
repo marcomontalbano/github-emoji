@@ -13,4 +13,12 @@ export default class Emoji {
         return `emoji/${this.name}.png`;
     }
 
+    static fromJson(json) {
+        const emoji = json.map((entry) => {
+            return new this(entry);
+        });
+
+        return emoji;
+    }
+
 }

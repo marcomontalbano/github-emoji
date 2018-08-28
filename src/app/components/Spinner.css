@@ -1,5 +1,6 @@
 .Spinner {
   margin-top: 15px;
+  display: inline-block;
 }
 
 .Spinner img {
@@ -9,19 +10,18 @@
 .Spinner .text {
   color: #f1ab57;
   letter-spacing: 5px;
+  margin-right: -5px;
   text-transform: uppercase;
-}
-
-.Spinner .text-with-padding-top {
-  padding-top: 10px;
+  padding-top: 12px;
 }
 
 @keyframes jump {
-  0%   {transform: translate3d(0,0,0) scale3d(1,1,1);}
-  40%  {transform: translate3d(0,30%,0) scale3d(.7,1.5,1);}
-  100% {transform: translate3d(0,100%,0) scale3d(1.5,.7,1);}
+  /* 0%   {transform: translateY(0,0,0) scale3d(1,1,1);}
+  40%  {transform: translateY(0,30%,0) scale3d(.7,1.5,1);}
+  100% {transform: translateY(0,100%,0) scale3d(1.5,.7,1);} */
+  100% {transform: rotate(360deg);}
 }
-.jump {
-  transform-origin: 50% 50%;
-  animation: jump .6s linear alternate infinite;
+.jump img {
+  /* transform-origin: 50% 50%; */
+  animation: jump 2s ease-in-out infinite;
 }
