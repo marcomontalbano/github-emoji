@@ -1,6 +1,15 @@
 {
-  "main.css": "static/css/main.c2561e28.css",
-  "main.css.map": "static/css/main.c2561e28.css.map",
-  "main.js": "static/js/main.39871fc7.js",
-  "main.js.map": "static/js/main.39871fc7.js.map"
+  "files": {
+    "main.css": "/github-emoji/static/css/main.9abb6a9b.chunk.css",
+    "main.js": "/github-emoji/static/js/main.f6c7ea5c.chunk.js",
+    "main.js.map": "/github-emoji/static/js/main.f6c7ea5c.chunk.js.map",
+    "runtime~main.js": "/github-emoji/static/js/runtime~main.ee16f268.js",
+    "runtime~main.js.map": "/github-emoji/static/js/runtime~main.ee16f268.js.map",
+    "static/js/2.5db8dd71.chunk.js": "/github-emoji/static/js/2.5db8dd71.chunk.js",
+    "static/js/2.5db8dd71.chunk.js.map": "/github-emoji/static/js/2.5db8dd71.chunk.js.map",
+    "index.html": "/github-emoji/index.html",
+    "precache-manifest.373cd8f0ad4bb4f41cbd7b86f9d55e8d.js": "/github-emoji/precache-manifest.373cd8f0ad4bb4f41cbd7b86f9d55e8d.js",
+    "service-worker.js": "/github-emoji/service-worker.js",
+    "static/css/main.9abb6a9b.chunk.css.map": "/github-emoji/static/css/main.9abb6a9b.chunk.css.map"
+  }
 }
