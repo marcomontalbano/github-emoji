@@ -8,20 +8,21 @@ import './Results.css';
 
 class Results extends Component {
 
-    renderItems(emojiStore) {
-        if (emojiStore.results.length === 0 && emojiStore.hasResults === true) {
+    renderItems(hasResults, results) {
+        if (hasResults === true && results.length === 0) {
             return <NotFound />;
         }
 
-        return emojiStore.results.length > 0 ? emojiStore.results.map((item, key) => (
+        return results.length > 0 ? results.map((item, key) => (
             <Emoji key={key} item={item} />
         )) : <Spinner />;
     }
 
     render() {
+        const {hasResults, results} = this.props
         return (
             <div className="Results container">
-                {this.renderItems(this.props.emoji)}
+                {this.renderItems(hasResults, results)}
             </div>
         );
     }

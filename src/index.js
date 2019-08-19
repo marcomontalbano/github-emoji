@@ -1,15 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import AppContainer from './app/components/AppContainer';
-
-import registerServiceWorker from './registerServiceWorker';
+import App from './app/components/App';
+// import registerServiceWorker from './registerServiceWorker';
 
 import packageJson from '../package.json';
 
 import './index.css';
 
 ReactDOM.render(
-    <AppContainer />,
+    <App />,
     document.getElementById('root')
 );
 
@@ -22,4 +21,4 @@ ReactDOM.render(
     document.getElementById('version')
 );
 
-registerServiceWorker();
+// registerServiceWorker();
