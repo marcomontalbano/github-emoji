@@ -48,12 +48,14 @@ class Emoji extends Component {
     }
 
     render() {
+        const relativeImage = `${window.location.pathname.replace(/\/$/, '')}/${this.props.item.relativeImage}`;
+
         return (
             <div className={`Emoji ${ this.state.isCopied ? 'copied' : '' }`}>
-                <div className="image"><img src={this.props.item.relativeImage} alt={this.props.item.name} /></div>
+                <div className="image"><img src={relativeImage} alt={this.props.item.name} /></div>
                 <div className="name">{this.props.item.code}</div>
                 <div className="details">
-                    <div className="image"><img src={this.props.item.relativeImage} alt={this.props.item.name} /></div>
+                    <div className="image"><img src={relativeImage} alt={this.props.item.name} /></div>
                     <div className="name" onClick={this.handleClickToCopy}>{this.props.item.code}</div>
                     <div className="name char">
                         <div onClick={this.handleClickToCopy} className="column column-left" dangerouslySetInnerHTML={{ __html: this.props.item.html_entity }}></div>

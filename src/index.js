@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './app/components/App';
-// import registerServiceWorker from './registerServiceWorker';
 
 import packageJson from '../package.json';
 
@@ -20,5 +19,3 @@ ReactDOM.render(
     ),
     document.getElementById('version')
 );
-
-// registerServiceWorker();

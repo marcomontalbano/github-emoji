@@ -4,7 +4,7 @@ import Emoji from './class/Emoji';
 class Api {
 
     load() {
-        fetch('./emoji.json')
+        fetch(`${window.location.pathname.replace(/\/$/, '')}/emoji.json`)
             .then(function(response) {
                 return response.json();
             })
