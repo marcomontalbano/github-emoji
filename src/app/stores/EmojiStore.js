@@ -5,7 +5,7 @@ import ActionTypes from '../actions/ActionTypes';
 class EmojiStore extends ReduceStore {
     constructor() {
         super(AppDispatcher);
-        this.results = [];
+        this.storedResults = []
     }
 
     getInitialState() {
@@ -18,18 +18,20 @@ class EmojiStore extends ReduceStore {
     reduce(state, action) {
         switch (action.type) {
             case ActionTypes.LOADED_EMOJI:
-                this.results = action.value;
+                this.storedResults = action.value;
                 return {
-                    hasResults: this.results.length > 0,
-                    results: this.results,
+                    hasResults: action.value.length > 0,
+                    results: action.value,
                 };
+
             case ActionTypes.SEARCH:
                 return {
-                    hasResults: this.results.length > 0,
-                    results: this.results.filter((emoji) => {
+                    hasResults: this.storedResults.length > 0,
+                    results: this.storedResults.filter((emoji) => {
                         return emoji.name.toLowerCase().indexOf(action.value.toLowerCase()) >= 0;
                     }),
                 };
+
             default:
                 return state;
         }

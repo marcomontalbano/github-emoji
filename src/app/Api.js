@@ -1,19 +1,6 @@
 import EmojiActions from './actions/EmojiActions';
-import Emoji from './class/Emoji';
 
-class Api {
-
-    load() {
-        fetch(`${window.location.pathname.replace(/\/$/, '')}/emoji.json`)
-            .then(function(response) {
-                return response.json();
-            })
-            .then(function(json) {
-                EmojiActions.loadedEmoji(Emoji.fromJson(json));
-            })
-        ;
-    }
-
-}
-
-export default new Api();
+export const load = () =>
+    fetch(`${window.location.pathname.replace(/\/$/, '')}/emoji.json`)
+        .then(response  => response.json())
+        .then(json => EmojiActions.loadedEmoji(json))

@@ -3,13 +3,13 @@
   border-radius: 5px;
 }
 
-.Emoji > .name {
-  border-radius: 0 0 5px 5px;
+.Emoji .image.is-emoji {
+  padding: 0;
+  font-size: 32px;
 }
 
-@keyframes fadein {
-    from { opacity: 0; }
-    to   { opacity: 1; }
+.Emoji > .name {
+  border-radius: 0 0 5px 5px;
 }
 
 .Emoji {
@@ -18,10 +18,7 @@
   display: inline-block;
   margin: 8px;
   padding: 0;
-  border: 1px solid #FFF;
-  transition: border-color .5s, background-color .5s;
   position: relative;
-  animation: fadein .5s;
 }
 
 @media (min-width: 640px) {
@@ -53,7 +50,6 @@
   overflow: hidden;
   text-overflow: ellipsis;
   border-top: 1px solid #FFF;
-  transition: border-color .5s;
 }
 
 
@@ -65,13 +61,13 @@
   top: -1px;
   left: -20%;
   width: calc(100% + 40%);
-  background: #feeec1;
   z-index: 1;
   border-radius: 5px;
   border: 1px solid #fbcb2e;
   box-sizing: border-box;
   overflow: hidden;
   box-shadow: 1px 1px 1px #fce4b3;
+  padding-top: 48px;
 }
 
 .Emoji .details .name {
@@ -79,6 +75,8 @@
   border-top: 1px solid #fbcb2e;
   position: relative;
   cursor: pointer;
+
+  background-color: #fef7e2;
 }
 
 .Emoji .details .name:before, .Emoji .details .name .column:before {
@@ -128,6 +126,8 @@
   overflow: hidden;
   text-overflow: ellipsis;
   box-sizing: border-box;
+
+  display: none;
 }
 
 .Emoji .details .name.char .column-right {
@@ -140,6 +140,9 @@
   text-overflow: ellipsis;
   padding: 0 8px;
   box-sizing: border-box;
+
+  width: 100%;
+  border-left: none;
 }
 
 .Emoji:hover .details, .Emoji.show-details .details {
