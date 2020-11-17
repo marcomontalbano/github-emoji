@@ -2,7 +2,7 @@ import AppDispatcher from '../../AppDispatcher';
 import ActionTypes from './ActionTypes';
 import { load } from '../Api';
 
-export default {
+const emojiActions = {
     load() {
         load();
     },
@@ -21,3 +21,5 @@ export default {
         });
     },
 };
+
+export default emojiActions;

@@ -36,7 +36,6 @@ axios.get('https://www.unicode.org/Public/emoji/latest/emoji-test.txt')
         const getHTMLEntity = (unicode) => `&#${getDecimal(unicode)};`;
         const getEmoji = (unicode) => he.decode(getHTMLEntity(unicode));
         const getEscapedUnicode = (unicode) => jsesc(getEmoji(unicode), { es6: false }).replace(/\x([A-Z0-9]{2})/g, (match, p1) => `\\u00${p1}`)
-        // const getEscapedUnicode = (unicode) => `\\u${unicode}`;
 
         const transformUnicode = (unicode, method) => unicode.split(' ').map(method).join('');
 
