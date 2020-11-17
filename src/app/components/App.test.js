@@ -4,7 +4,11 @@ import App from './App';
 
 describe('App', function () {
     it('renders without crashing', () => {
-        const div = document.createElement('div');
-        ReactDOM.render(<App />, div);
+        document.body.innerHTML = `
+            <h1></h1>
+            <div id="root"></div>
+        `;
+
+        ReactDOM.render(<App />, document.getElementById('root'));
     });
 });

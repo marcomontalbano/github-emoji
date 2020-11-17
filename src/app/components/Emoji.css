@@ -45,7 +45,8 @@
 
 .Emoji .name {
   background-color: #FFF;
-  font-size: 11px;
+  font-size: 12px;
+  letter-spacing: .5px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -67,19 +68,30 @@
   box-sizing: border-box;
   overflow: hidden;
   box-shadow: 1px 1px 1px #fce4b3;
-  padding-top: 48px;
+  /* padding-top: 48px; */
+}
+
+.Emoji .details .image,
+.Emoji .details .name {
+  position: relative;
+  cursor: pointer;
+}
+
+.Emoji .details .image > span {
+  white-space: nowrap;
+  opacity: 0;
 }
 
 .Emoji .details .name {
   padding: 8px;
   border-top: 1px solid #fbcb2e;
   position: relative;
-  cursor: pointer;
 
   background-color: #fef7e2;
 }
 
-.Emoji .details .name:before, .Emoji .details .name .column:before {
+.Emoji .details .image:before,
+.Emoji .details .name:before {
   content: "COPIED";
   position: absolute;
   top: 0;
@@ -100,50 +112,12 @@
   z-index: -1;
 }
 
-.Emoji .details .name.char:before {
-  line-height: 49px;
-}
-
-.Emoji .details .name.copied:before, .Emoji .details .name .column.copied:before {
+.Emoji .details .name.copied:before,
+.Emoji .details .image.copied:before {
   opacity: 1;
   z-index: 1;
 }
 
-.Emoji .details .name.char {
-  font-size: 13px;
-  background-color: #feeec1;
-  line-height: 32px;
-  padding: 0;
-}
-
-.Emoji .details .name.char .column {
-  position: relative;
-}
-.Emoji .details .name.char .column-left {
-  padding: 0 0 0 4px;
-  float: left;
-  width: 48%;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  box-sizing: border-box;
-
-  display: none;
-}
-
-.Emoji .details .name.char .column-right {
-  float: right;
-  width: 52%;
-  background: white;
-  border-left: 1px solid #fbcb2e;
-  font-size: 10px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  padding: 0 8px;
-  box-sizing: border-box;
-
-  width: 100%;
-  border-left: none;
-}
 
 .Emoji:hover .details, .Emoji.show-details .details {
   opacity: 1;

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
 
 import EmojiActions from '../actions/EmojiActions';
 import EmojiStore from '../stores/EmojiStore';
@@ -32,6 +33,14 @@ class App extends Component {
     render() {
         return (
             <div className="App">
+                {
+                    ReactDOM.createPortal(
+                        (
+                            <sup style={{ fontSize: '50%' }}>{ this.state.emoji.hasResults ? this.state.emoji.results.length : '' }</sup>
+                        ),
+                        document.querySelector('h1')
+                    )
+                }
                 <Filter {...this.state.emoji} />
                 <Results {...this.state.emoji} />
             </div>

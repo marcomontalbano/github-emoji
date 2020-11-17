@@ -10,6 +10,8 @@
 
 # production
 /build
+/dist
+/public/emoji.json
 
 # misc
 .DS_Store

@@ -27,8 +27,8 @@ class EmojiStore extends ReduceStore {
             case ActionTypes.SEARCH:
                 return {
                     hasResults: this.storedResults.length > 0,
-                    results: this.storedResults.filter((emoji) => {
-                        return emoji.name.toLowerCase().indexOf(action.value.toLowerCase()) >= 0;
+                    results: this.storedResults.filter(([name]) => {
+                        return name.toLowerCase().indexOf(action.value.toLowerCase()) >= 0;
                     }),
                 };
 
