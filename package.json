@@ -24,7 +24,7 @@
     "smile"
   ],
   "engines": {
-    "node": ">= 12"
+    "node": "^12 || >=14"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^5.11.5",
@@ -43,6 +43,7 @@
     "react-scripts": "4.0.0"
   },
   "scripts": {
+    "preinstall": "node -e \"if(process.env.npm_execpath.indexOf('yarn') === -1) throw new Error('You must use Yarn to install, not NPM')\"",
     "dump": "node ./src/scripts/dump-emoji.js",
     "prestart": "run-s dump",
     "start": "react-scripts start",
