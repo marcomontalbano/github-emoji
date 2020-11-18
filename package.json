@@ -51,9 +51,7 @@
     "build": "react-scripts build",
     "preserve": "run-s build",
     "serve": "npx local-web-server -p 8001 -d build --rewrite '/github-emoji/(.*) -> /$1'",
-    "test": "react-scripts test --env=jsdom",
-    "gh-pages": "node ./src/scripts/gh-pages.js",
-    "deploy": "run-s build gh-pages"
+    "test": "react-scripts test --env=jsdom"
   },
   "eslintConfig": {
     "extends": "react-app"
