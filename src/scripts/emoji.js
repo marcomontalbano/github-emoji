@@ -2,7 +2,7 @@
 // https://www.unicode.org/reports/tr51/
 // http://www.unicode.org/emoji/charts/emoji-list.html
 
-const csvParse = require('csv-parse/lib/sync');
+const { parse } = require('csv-parse/sync');
 const axios = require('axios');
 const jsesc = require('jsesc');
 const he = require('he');
@@ -10,11 +10,12 @@ const he = require('he');
 const dumpEmoji = () => {
     return axios.get('https://www.unicode.org/Public/emoji/latest/emoji-test.txt')
         .then((response) => response.data)
-        .then((csv) => csvParse(`unicode;qualification\n${csv}`, {
+        // .then((csv) => { console.log('csv', csv); return csv; })
+        .then((csv) => parse(`unicode;qualification\n${csv}`, {
             delimiter: ';',
             comment: '#',
             trim: true,
-            skip_lines_with_error: true
+            skip_empty_lines: true
         }))
         .then((items) => items.filter(([, qualification]) => qualification === 'fully-qualified'))
         .then((items) => {
