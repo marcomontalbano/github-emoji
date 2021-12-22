@@ -7,6 +7,8 @@ const axios = require('axios');
 const jsesc = require('jsesc');
 const he = require('he');
 
+const { fetchEmojiKeywords } = require('./emoji-keywords.js')
+
 const dumpEmoji = () => {
     return axios.get('https://www.unicode.org/Public/emoji/latest/emoji-test.txt')
         .then((response) => response.data)
@@ -61,6 +63,23 @@ const dumpEmoji = () => {
             });
 
             return Object.fromEntries(emojis);
+        })
+        .then(async (emojis) => {
+            const keywords = await fetchEmojiKeywords();
+
+            const emojisEntries = Object.entries(emojis);
+
+            const emojisEntriesWithKeywords = emojisEntries.map(([key, value]) => {
+                const perfectMatch = Object.entries(keywords).find(([code]) => value.unicode === code) || []
+                const [, emojiKeywords] = perfectMatch.length ? perfectMatch : Object.entries(keywords).find(([code]) => value.unicode?.includes(code)) || []
+
+                return ([key, {
+                    ...value,
+                    keywords: emojiKeywords
+                }])
+            })
+
+            return Object.fromEntries(emojisEntriesWithKeywords);
         })
 }
 

@@ -33,6 +33,6 @@ dumpEmoji().then((emojis) => {
 
     fs.writeFileSync(
         path.resolve(publicFolder, 'emoji.json'),
-        JSON.stringify(slimEmojis).replace(/\\+/g, '\\')
+        JSON.stringify(emojis).replace(/\\+/g, '\\')
     );
 })

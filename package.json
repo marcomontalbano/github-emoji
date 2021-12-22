@@ -35,6 +35,7 @@
     "flux": "^4.0.3",
     "gh-pages": "^3.2.3",
     "he": "^1.2.0",
+    "html-miner": "^3.1.2",
     "jsesc": "^3.0.2",
     "npm-run-all": "^4.1.5",
     "prop-types": "^15.7.2",
@@ -44,7 +45,7 @@
   },
   "scripts": {
     "preinstall": "node -e \"if(process.env.npm_execpath.indexOf('yarn') === -1) throw new Error('You must use Yarn to install, not NPM')\"",
-    "dump": "node ./src/scripts/dump-emoji.js",
+    "dump": "node ./src/scripts/dump.js",
     "prestart": "run-s dump",
     "start": "react-scripts start",
     "prebuild": "run-s dump",

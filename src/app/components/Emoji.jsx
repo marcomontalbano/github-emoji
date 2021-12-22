@@ -49,17 +49,16 @@ class Emoji extends Component {
     render() {
         const [name, content] = this.props.item;
         const ghcode = `:${name}:`;
-        const isEmoji = !content.startsWith('https://');
-        const emoji = isEmoji ? content : (
-            <img src={content} alt={name} />
+        const emoji = content.valid ? content.escaped : (
+            <img src={content.image} alt={name} />
         );
 
         return (
             <div className={`Emoji ${ this.state.isCopied ? 'copied' : '' }`}>
-                <div className={`image ${isEmoji ? 'is-emoji': ''}`}>{emoji}</div>
+                <div className={`image ${content.valid ? 'is-emoji': ''}`}>{emoji}</div>
                 <div className="name">{ghcode}</div>
                 <div className="details">
-                    <div onClick={this.handleClickToCopy} className="image is-emoji"><span>{content}</span></div>
+                    <div onClick={this.handleClickToCopy} className="image is-emoji"><span>{content.escaped}</span></div>
                     <div className="name" onClick={this.handleClickToCopy}>{ghcode}</div>
                 </div>
             </div>
