@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/github-emoji/static/css/main.49d6f76b.css",
-    "main.js": "/github-emoji/static/js/main.dcf348de.js",
+    "main.js": "/github-emoji/static/js/main.3a2aa8b7.js",
     "index.html": "/github-emoji/index.html",
     "main.49d6f76b.css.map": "/github-emoji/static/css/main.49d6f76b.css.map",
-    "main.dcf348de.js.map": "/github-emoji/static/js/main.dcf348de.js.map"
+    "main.3a2aa8b7.js.map": "/github-emoji/static/js/main.3a2aa8b7.js.map"
   },
   "entrypoints": [
     "static/css/main.49d6f76b.css",
-    "static/js/main.dcf348de.js"
+    "static/js/main.3a2aa8b7.js"
   ]
 }
