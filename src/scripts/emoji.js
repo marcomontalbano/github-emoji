@@ -75,7 +75,7 @@ const dumpEmoji = () => {
 
                 return ([key, {
                     ...value,
-                    keywords: emojiKeywords
+                    ...emojiKeywords
                 }])
             })
 
