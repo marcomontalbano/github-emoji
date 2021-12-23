@@ -32,6 +32,7 @@ class EmojiStore extends ReduceStore {
                             || name.toLowerCase().includes(action.value.toLowerCase())
                             || (content.keywords || []).find(k => k.includes(action.value.toLowerCase())) !== undefined
                             || (content.category ? content.category.toLowerCase().includes(action.value.toLowerCase()) : false)
+                            || (content.emoji === action.value)
                             ;
                     }),
                 };
