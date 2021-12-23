@@ -1,26 +1,15 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import React from 'react';
 
 import './Emoji.css';
 
-class Emoji extends Component {
+export const Emoji = ({ item }) => {
+    const [name, content] = item;
+    const ghcode = `:${name}:`;
+    const emoji = content.valid ? content.escaped : (
+        <img src={content.image} alt={name} />
+    );
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            isCopied: false
-        };
-
-        this.handleClickToCopy = this.handleClickToCopy.bind(this);
-    }
-
-    static get propTypes() {
-        return {
-            item: PropTypes.array.isRequired,
-        };
-    }
-
-    copyToClipboard(target) {
+    const copyToClipboard = (target) => {
         var textarea = document.createElement('textarea');
         textarea.innerText = target.textContent;
 
@@ -42,28 +31,18 @@ class Emoji extends Component {
         textarea.remove();
     }
 
-    handleClickToCopy(e) {
-        this.copyToClipboard(e.currentTarget);
+    const handleClickToCopy = (e) => {
+        copyToClipboard(e.currentTarget);
     }
 
-    render() {
-        const [name, content] = this.props.item;
-        const ghcode = `:${name}:`;
-        const emoji = content.valid ? content.escaped : (
-            <img src={content.image} alt={name} />
-        );
-
-        return (
-            <div className={`Emoji ${ this.state.isCopied ? 'copied' : '' }`}>
-                <div className={`image ${content.valid ? 'is-emoji': ''}`}>{emoji}</div>
-                <div className="name">{ghcode}</div>
-                <div className="details">
-                    <div onClick={this.handleClickToCopy} className="image is-emoji"><span>{content.escaped}</span></div>
-                    <div className="name" onClick={this.handleClickToCopy}>{ghcode}</div>
-                </div>
+    return (
+        <div className={`Emoji`}>
+            <div className={`image ${content.valid ? 'is-emoji': ''}`}>{emoji}</div>
+            <div className="name">{ghcode}</div>
+            <div className="details">
+                <div onClick={handleClickToCopy} className="image is-emoji"><span>{content.escaped}</span></div>
+                <div className="name" onClick={handleClickToCopy}>{ghcode}</div>
             </div>
-        );
-    }
+        </div>
+    );
 }
-
-export default Emoji;

@@ -1,51 +1,41 @@
-import React, { Component } from 'react';
+import React, { useEffect, useState } from 'react';
 import ReactDOM from 'react-dom';
 
 import EmojiActions from '../actions/EmojiActions';
 import EmojiStore from '../stores/EmojiStore';
 
-import Filter from './Filter';
-import Results from './Results';
+import { Filter } from './Filter';
+import { Results } from './Results';
 
 import './App.css';
 
-class App extends Component {
+const App = () => {
+    const [emoji, setEmoji] = useState(EmojiStore.getState())
 
-    state = {
-        emoji: EmojiStore.getState()
-    };
-
-    componentDidMount() {
-        EmojiActions.load();
-        this.listener = EmojiStore.addListener(this.onEmojiStoreHandler);
-    }
-
-    componentWillUnmount() {
-        this.listener.remove();
-    }
-
-    onEmojiStoreHandler = () => {
-        this.setState({
-            emoji: EmojiStore.getState()
+    useEffect(() => {
+        const listener = EmojiStore.addListener(() => {
+            setEmoji(EmojiStore.getState())
         });
-    }
 
-    render() {
-        return (
-            <div className="App">
-                {
-                    ReactDOM.createPortal(
-                        (
-                            <sup style={{ fontSize: '50%' }}>{ this.state.emoji.hasResults ? this.state.emoji.results.length : '' }</sup>
-                        ),
-                        document.querySelector('h1')
-                    )
-                }
-                <Filter {...this.state.emoji} />
-                <Results {...this.state.emoji} />
-            </div>
-        );
-    }
+        EmojiActions.load();
+
+        return () => listener.remove()
+    }, [])
+
+    return (
+        <div className="App">
+            {
+                ReactDOM.createPortal(
+                    (
+                        <sup style={{ fontSize: '50%' }}>{ emoji.hasResults ? emoji.results.length : '' }</sup>
+                    ),
+                    document.querySelector('h1')
+                )
+            }
+            <Filter />
+            <Results {...emoji} />
+        </div>
+    );
 }
 
 export default App;

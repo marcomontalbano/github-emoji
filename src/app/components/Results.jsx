@@ -1,8 +1,8 @@
 import React from 'react';
 
-import NotFound from './NotFound';
-import Spinner from './Spinner';
-import Emoji from './Emoji';
+import { NotFound } from './NotFound';
+import { Spinner } from './Spinner';
+import { Emoji } from './Emoji';
 
 import './Results.css';
 
@@ -16,10 +16,8 @@ const renderItems = (hasResults, results) => {
     )) : <Spinner />;
 }
 
-const Results = ({ hasResults, results }) => (
+export const Results = ({ hasResults, results }) => (
     <div className="Results container">
         {renderItems(hasResults, results)}
     </div>
 )
-
-export default Results;
