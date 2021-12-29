@@ -72,7 +72,9 @@
       "last 1 safari version"
     ]
   },
-  "dependencies": {},
+  "dependencies": {
+    "react-virtuoso": "^2.3.4"
+  },
   "reactSnap": {
     "cacheAjaxRequests": true
   }

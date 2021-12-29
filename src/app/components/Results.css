@@ -1,5 +1,4 @@
 .Results {
-  margin-top: 25px;
-  margin-bottom: 25px;
   text-align: center;
+  height: calc(100vh - 75px);
 }

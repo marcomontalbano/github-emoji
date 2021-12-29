@@ -36,13 +36,13 @@ export const Emoji = ({ item }) => {
     }
 
     return (
-        <div className={`Emoji`}>
+        <>
             <div className={`image ${content.valid ? 'is-emoji': ''}`}>{emoji}</div>
             <div className="name">{ghcode}</div>
             <div className="details">
                 <div onClick={handleClickToCopy} className="image is-emoji"><span>{content.escaped}</span></div>
                 <div className="name" onClick={handleClickToCopy}>{ghcode}</div>
             </div>
-        </div>
+        </>
     );
 }

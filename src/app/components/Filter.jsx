@@ -20,9 +20,11 @@ export const Filter = () => {
 
     return (
         <div className="Filter">
-            <div className="container">
-                <input className={isSearching ? 'is-searching' : ''} onChange={onChangeHandler} placeholder="Search Emoji .." type="text" />
-            </div>
+            <input className={isSearching ? 'is-searching' : ''} onChange={onChangeHandler} placeholder="Search Emoji .." type="text" />
+            <a className="ico" href="https://github.com/marcomontalbano/github-emoji/stargazers">♥️</a>
+            <button className="ico" onClick={() => {
+                document.body.classList.add('info-visible');
+            }}>ℹ️</button>
         </div>
     );
 }

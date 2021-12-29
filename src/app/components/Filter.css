@@ -1,6 +1,8 @@
 .Filter {
   background-color: #f6a324;
-  padding: 20px 0;
+  padding: 20px 40px;
+
+  display: flex;
 }
 
 .Filter input {
@@ -30,4 +32,8 @@
   outline: none;
   background-color: #ffffff2e;
   border-radius: 5px;
+}
+
+.Filter .ico {
+  margin-left: 30px;
 }
