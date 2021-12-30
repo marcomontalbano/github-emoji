@@ -14,7 +14,7 @@ const renderItems = (hasResults, results) => {
 
     return results.length > 0 ? (
         <VirtuosoGrid
-            style={{ height: 'calc(100vh - 75px)' }}
+            // style={{ height: 'calc(100vh - 75px)' }}
             totalCount={results.length}
             overscan={4}
             components={{
