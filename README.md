@@ -1,5 +1,4 @@
-GitHub Emoji
-============
+# GitHub Emoji
 
 [![Build Status](https://travis-ci.com/marcomontalbano/github-emoji.svg?branch=master)](https://travis-ci.com/marcomontalbano/github-emoji)
 [![PayPal.me](https://img.shields.io/badge/paypal-donate-119fde.svg)](https://www.paypal.me/marcomontalbano)
