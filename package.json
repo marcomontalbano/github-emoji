@@ -52,7 +52,6 @@
     "start": "react-scripts start",
     "prebuild": "run-s dump",
     "build": "react-scripts build",
-    "postbuild": "react-snap",
     "preserve": "run-s build",
     "serve": "ws -p 8001 -d build --rewrite '/github-emoji/(.*) -> /$1'",
     "test": "react-scripts test --env=jsdom"
