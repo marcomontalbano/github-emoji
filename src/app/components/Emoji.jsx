@@ -11,7 +11,9 @@ export const Emoji = ({ item }) => {
 
     const copyToClipboard = (target) => {
         var textarea = document.createElement('textarea');
-        textarea.innerText = target.classList.contains('is-emoji') ? target.textContent : target.querySelector('img').src;
+        textarea.innerText = target.classList.contains('is-image')
+          ? target.querySelector('img').src
+          : target.textContent;
 
         document.getElementsByTagName('body')[0].append(textarea);
         textarea.select();
@@ -36,13 +38,17 @@ export const Emoji = ({ item }) => {
     }
 
     return (
-        <>
-            <div className={`image ${content.valid ? 'is-emoji': ''}`}>{emoji}</div>
-            <div className="name">{ghcode}</div>
-            <div className="details">
-                <div onClick={handleClickToCopy} className={`image ${content.valid ? 'is-emoji': ''}`}><span>{emoji}</span></div>
-                <div className="name" onClick={handleClickToCopy}>{ghcode}</div>
-            </div>
-        </>
+      <>
+        <div className={`image ${content.valid ? 'is-emoji' : 'is-image'}`}>{emoji}</div>
+        <div className="name">{ghcode}</div>
+        <div className="details">
+          <div onClick={handleClickToCopy} className={`image ${content.valid ? 'is-emoji' : 'is-image'}`}>
+            <span>{emoji}</span>
+          </div>
+          <div className="name" onClick={handleClickToCopy}>
+            {ghcode}
+          </div>
+        </div>
+      </>
     );
 }
