@@ -12,7 +12,7 @@ For instance, if you're feeling hungry but can't decide what to eat, locating a 
 
 With _GitHub Emoji_, you can simply search for _"**food**"_ …
 
-![Searching for "food"](https://github.com/marcomontalbano/github-emoji/assets/1681269/786ad9d2-877b-4bdf-b5df-1551ae02fc8c)
+![Searching for "food"](https://github.com/marcomontalbano/github-emoji/assets/1681269/a49db760-a205-48e9-b314-7d0b27aace92)
 
 ## How it works
 
