@@ -1,3 +1,5 @@
+// @ts-check
+
 import { ReduceStore } from 'flux/utils';
 import AppDispatcher from '../../AppDispatcher';
 import ActionTypes from '../actions/ActionTypes';
@@ -33,6 +35,7 @@ class EmojiStore extends ReduceStore {
                             || (content.keywords || []).find(k => k.includes(action.value.toLowerCase())) !== undefined
                             || (content.category ? content.category.toLowerCase().includes(action.value.toLowerCase()) : false)
                             || (content.emoji === action.value)
+                            || (content.ghcode.includes(action.value))
                             ;
                     }),
                 };
